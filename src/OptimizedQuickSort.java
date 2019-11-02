@@ -1,5 +1,6 @@
 public class OptimizedQuickSort implements Sort{
 
+    @Override
     public void sort(int t[], int first, int last) {
 
         if (t.length < 16){

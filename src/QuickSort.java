@@ -17,7 +17,7 @@ public class QuickSort implements Sort {
         return i+1;
     }
 
-
+    @Override
     public void sort(int t[], int first, int last){
 
         if (first < last){

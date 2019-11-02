@@ -1,6 +1,7 @@
 public class SelectionSort implements Sort{
 
 
+    @Override
     public void sort(int t[]){
         for (int i=0; i<(t.length-1); i++) {
             int min = i;
