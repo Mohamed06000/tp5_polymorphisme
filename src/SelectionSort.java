@@ -2,20 +2,21 @@ public class SelectionSort implements Sort{
 
 
     @Override
-    public void sort(int t[]){ sort(t, 0, t.length-1); }
+    public void sort(int[] t, int from, int to)
+    {
 
-    @Override
-    public void sort(int[] t, int from, int to){
-
-        for(int i = from; i<=to-1; i++){
+        for(int i = from; i<=to-1; i++)
+        {
             int min = i;
-            for(int j = i+1; j <= to; j++){
-                if (t[j] < t[min]) {
+            for(int j = i+1; j <= to; j++)
+            {
+                if (t[j] < t[min])
+                {
                     min = j;
                 }
             }
-
-            if (min != i) {
+            if (min != i)
+            {
                 ArrayUtil.swap(t,i,min);
             }
         }

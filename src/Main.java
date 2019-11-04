@@ -1,56 +1,64 @@
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
-        int t[] = {3,0,2,17,9,14,5},
-                t2[] = {56,4,9,2,8,7,2},
-                t3[] = {3,99,0,8,5,2},
-                t4[] = {7,85,46,92,3,4};
 
-        /*ArrayUtil tab = new ArrayUtil();
-        tab.swap(t,1,2);
-        System.out.println(Arrays.toString(t));*/
+        // TEST DE CHAQUE ALGO DE TRI :
 
-        SelectionSort selection = new SelectionSort();
-        QuickSort rapide = new QuickSort();
-        BubbleSort bulle = new BubbleSort();
-        OptimizedQuickSort opRapide = new OptimizedQuickSort();
+            int tab1[] = {10,5,8,9,66,825,2},
+                tab2[] = {7,8,6,55,2,778,24,36},
+                tab3[] = {12,0,14,584,3,25,48},
+                tab4[] = {147,11,18,87,65,25,66,3};
 
-        selection.sort(t);
-        System.out.println("SelectionSort : " + Arrays.toString(t));
-        rapide.sort(t2);
-        System.out.println("QuickSort : " + Arrays.toString(t2));
-        bulle.sort(t3);
-        System.out.println("BulleSort : " + Arrays.toString(t3));
-        opRapide.sort(t4);
-        System.out.println("OptimizedQuickSort : " + Arrays.toString(t4));
+        SelectionSort triSelection = new SelectionSort();
+        QuickSort triRapide = new QuickSort();
+        BubbleSort triBulle = new BubbleSort();
+        OptimizedQuickSort opTriRapide = new OptimizedQuickSort();
 
 
-        Instance arr1 = new Instance(1000000,1);
-        Instance arr2 = new Instance(1000000,2);
-        Instance arr3 = new Instance(1000000,4);
-        Instance arr4 = new Instance(1000000,8);
-        Instance arr5 = new Instance(1000000,16);
-        Instance arr6 = new Instance(1000000,32);
-        Instance arr7 = new Instance(1000000,64);
-
-        Benchmark ben = new Benchmark();
-
-        System.out.println("taille      |   Selection     |      Bubble     |       Quick sort     |       Optimized quick sort");
-        System.out.println("taille=1   :    "+ ben.getTime(selection,arr1) + "ms               "+ben.getTime(bulle,arr1)+"ms             " + ben.getTime(rapide,arr1)+"ms             " + ben.getTime(opRapide,arr1));
-        System.out.println("taille=2   :    "+ ben.getTime(selection,arr2) + "ms               "+ben.getTime(bulle,arr2)+"ms             " + ben.getTime(rapide,arr2)+"ms             " + ben.getTime(opRapide,arr2));
-        System.out.println("taille=4   :    "+ ben.getTime(selection,arr3) + "ms               "+ben.getTime(bulle,arr3)+"ms             " + ben.getTime(rapide,arr3)+"ms             " + ben.getTime(opRapide,arr3));
-        System.out.println("taille=8   :    "+ ben.getTime(selection,arr4) + "ms               "+ben.getTime(bulle,arr4)+"ms             " + ben.getTime(rapide,arr4)+"ms             " + ben.getTime(opRapide,arr4));
-        System.out.println("taille=16  :    "+ ben.getTime(selection,arr5) + "ms               "+ben.getTime(bulle,arr5)+"ms             " + ben.getTime(rapide,arr5)+"ms             " + ben.getTime(opRapide,arr5));
-        System.out.println("taille=32  :    "+ ben.getTime(selection,arr6) + "ms               "+ben.getTime(bulle,arr6)+"ms             " + ben.getTime(rapide,arr6)+"ms             " + ben.getTime(opRapide,arr6));
-        System.out.println("taille=64  :    "+ ben.getTime(selection,arr7) + "ms               "+ben.getTime(bulle,arr7)+"ms             " + ben.getTime(rapide,arr7)+"ms             " + ben.getTime(opRapide,arr7));
+        System.out.printf("le triSelectionSort de %s ---> ", Arrays.toString(tab1));
+        triSelection.sort(tab1);
+        System.out.printf("%s%n", Arrays.toString(tab1));
+        System.out.printf("le tri QuickSort de %s ---> ", Arrays.toString(tab2));
+        triRapide.sort(tab2);
+        System.out.printf("%s%n" ,Arrays.toString(tab2));
+        System.out.printf("le triBulle  de %s ---> ", Arrays.toString(tab3));
+        triBulle.sort(tab3);
+        System.out.printf("%s%n" ,Arrays.toString(tab3));
+        System.out.printf("le tri OptimizedQuickSort  de %s ---> ", Arrays.toString(tab4));
+        opTriRapide.sort(tab4);
+        System.out.printf("%s%n" ,Arrays.toString(tab4));
 
 
 
-        /*Possibilite for (int[] row : ben.getTab())
-            System.out.println("Tableau :" + Arrays.toString(row));*/
+        // CREATION DES INSTANCES , UNE INSTANCE EST COMPOSEE DE TABLEAU DE 1000000 TABLEAUX DONT LA TAILLE DE CHAQUE TABLEAU EST EGALE A LENGTH DONNEE :
 
-        //System.out.println(Arrays.deepToString(arr1.getTab()));
+        Instance setTab1 = new Instance(1000000,1);
+        Instance setTab2 = new Instance(1000000,2);
+        Instance setTab3 = new Instance(1000000,4);
+        Instance setTab4 = new Instance(1000000,8);
+        Instance setTab5 = new Instance(1000000,16);
+        Instance setTab6 = new Instance(1000000,32);
+        Instance setTab7 = new Instance(1000000,64);
+
+        // SCÉNARIO QUI PERMET DE COMPARER L'EFFICACITÉ DES DIFFÉRENTS TRIS IMPLÉMENTÉS :
+
+        Benchmark triBen = new Benchmark();
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------- TABLEAU DE COMPARAISON ---------------------------------------------------------------");
+
+
+        System.out.println("taille      |   triSelection     |      Bubble     |       Quick sort     |       Optimized quick sort");
+        System.out.println("taille=1   :    "+ triBen.getTime(triSelection,setTab1) + "ms               "+triBen.getTime(triBulle,setTab1)+"ms             " + triBen.getTime(triRapide,setTab1)+"ms               " + triBen.getTime(opTriRapide,setTab1)+"ms");
+        System.out.println("taille=2   :    "+ triBen.getTime(triSelection,setTab2) + "ms               "+triBen.getTime(triBulle,setTab2)+"ms             " + triBen.getTime(triRapide,setTab2)+"ms               " + triBen.getTime(opTriRapide,setTab2)+"ms");
+        System.out.println("taille=4   :    "+ triBen.getTime(triSelection,setTab3) + "ms               "+triBen.getTime(triBulle,setTab3)+"ms             " + triBen.getTime(triRapide,setTab3)+"ms               " + triBen.getTime(opTriRapide,setTab3)+"ms");
+        System.out.println("taille=8   :    "+ triBen.getTime(triSelection,setTab4) + "ms               "+triBen.getTime(triBulle,setTab4)+"ms             " + triBen.getTime(triRapide,setTab4)+"ms               " + triBen.getTime(opTriRapide,setTab4)+"ms");
+        System.out.println("taille=16  :    "+ triBen.getTime(triSelection,setTab5) + "ms               "+triBen.getTime(triBulle,setTab5)+"ms             " + triBen.getTime(triRapide,setTab5)+"ms               " + triBen.getTime(opTriRapide,setTab5)+"ms");
+        System.out.println("taille=32  :    "+ triBen.getTime(triSelection,setTab6) + "ms               "+triBen.getTime(triBulle,setTab6)+"ms             " + triBen.getTime(triRapide,setTab6)+"ms               " + triBen.getTime(opTriRapide,setTab6)+"ms");
+        System.out.println("taille=64  :    "+ triBen.getTime(triSelection,setTab7) + "ms               "+triBen.getTime(triBulle,setTab7)+"ms             " + triBen.getTime(triRapide,setTab7)+"ms               " + triBen.getTime(opTriRapide,setTab7)+"ms");
+
     }
 }
