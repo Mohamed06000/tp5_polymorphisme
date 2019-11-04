@@ -17,13 +17,13 @@ public class Main {
         BubbleSort bulle = new BubbleSort();
         OptimizedQuickSort opRapide = new OptimizedQuickSort();
 
-        selection.sort(t,0,t.length-1);
+        selection.sort(t);
         System.out.println("SelectionSort : " + Arrays.toString(t));
-        rapide.sort(t2,0,t2.length-1);
+        rapide.sort(t2);
         System.out.println("QuickSort : " + Arrays.toString(t2));
-        bulle.sort(t3,0,t3.length-1);
+        bulle.sort(t3);
         System.out.println("BulleSort : " + Arrays.toString(t3));
-        opRapide.sort(t4,0,t4.length-1);
+        opRapide.sort(t4);
         System.out.println("OptimizedQuickSort : " + Arrays.toString(t4));
 
 
@@ -37,14 +37,14 @@ public class Main {
 
         Benchmark ben = new Benchmark();
 
-        System.out.println("taille      |   Selection     |      bubble     |       quick sort");
-        System.out.println("taille=1   :    "+ ben.getTime(selection,arr1) + "ms               "+ben.getTime(bulle,arr1)+"ms             " + ben.getTime(rapide,arr1)+"ms");
-        System.out.println("taille=2   :    "+ ben.getTime(selection,arr2) + "ms               "+ben.getTime(bulle,arr2)+"ms             " + ben.getTime(rapide,arr2)+"ms");
-        System.out.println("taille=4   :    "+ ben.getTime(selection,arr3) + "ms               "+ben.getTime(bulle,arr3)+"ms             " + ben.getTime(rapide,arr3)+"ms");
-        System.out.println("taille=8   :    "+ ben.getTime(selection,arr4) + "ms               "+ben.getTime(bulle,arr4)+"ms             " + ben.getTime(rapide,arr4)+"ms");
-        System.out.println("taille=16  :    "+ ben.getTime(selection,arr5) + "ms               "+ben.getTime(bulle,arr5)+"ms             " + ben.getTime(rapide,arr5)+"ms");
-        System.out.println("taille=32  :    "+ ben.getTime(selection,arr6) + "ms               "+ben.getTime(bulle,arr6)+"ms             " + ben.getTime(rapide,arr6)+"ms");
-        System.out.println("taille=64  :    "+ ben.getTime(selection,arr7) + "ms               "+ben.getTime(bulle,arr7)+"ms             " + ben.getTime(rapide,arr7)+"ms");
+        System.out.println("taille      |   Selection     |      Bubble     |       Quick sort     |       Optimized quick sort");
+        System.out.println("taille=1   :    "+ ben.getTime(selection,arr1) + "ms               "+ben.getTime(bulle,arr1)+"ms             " + ben.getTime(rapide,arr1)+"ms             " + ben.getTime(opRapide,arr1));
+        System.out.println("taille=2   :    "+ ben.getTime(selection,arr2) + "ms               "+ben.getTime(bulle,arr2)+"ms             " + ben.getTime(rapide,arr2)+"ms             " + ben.getTime(opRapide,arr2));
+        System.out.println("taille=4   :    "+ ben.getTime(selection,arr3) + "ms               "+ben.getTime(bulle,arr3)+"ms             " + ben.getTime(rapide,arr3)+"ms             " + ben.getTime(opRapide,arr3));
+        System.out.println("taille=8   :    "+ ben.getTime(selection,arr4) + "ms               "+ben.getTime(bulle,arr4)+"ms             " + ben.getTime(rapide,arr4)+"ms             " + ben.getTime(opRapide,arr4));
+        System.out.println("taille=16  :    "+ ben.getTime(selection,arr5) + "ms               "+ben.getTime(bulle,arr5)+"ms             " + ben.getTime(rapide,arr5)+"ms             " + ben.getTime(opRapide,arr5));
+        System.out.println("taille=32  :    "+ ben.getTime(selection,arr6) + "ms               "+ben.getTime(bulle,arr6)+"ms             " + ben.getTime(rapide,arr6)+"ms             " + ben.getTime(opRapide,arr6));
+        System.out.println("taille=64  :    "+ ben.getTime(selection,arr7) + "ms               "+ben.getTime(bulle,arr7)+"ms             " + ben.getTime(rapide,arr7)+"ms             " + ben.getTime(opRapide,arr7));
 
 
 

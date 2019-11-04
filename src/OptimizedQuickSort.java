@@ -1,13 +1,19 @@
 public class OptimizedQuickSort implements Sort{
 
+    SelectionSort selectSort = new SelectionSort();
+    QuickSort rapideSort = new QuickSort();
+
     @Override
-    public void sort(int t[], int first, int last) {
+    public void sort(int t[]){ sort(t, 0, t.length-1); }
+
+    @Override
+    public void sort(int t[], int from, int to) {
 
         if (t.length < 16){
-            //SelectionSort.sort(t, first, last);
+            selectSort.sort(t, from, to);
         }
         else{
-            //QuickSort.sort(t,first,last);
+            rapideSort.sort(t,from,to);
         }
     }
 }

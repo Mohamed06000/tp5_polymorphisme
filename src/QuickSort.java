@@ -1,31 +1,36 @@
 public class QuickSort implements Sort {
 
 
-    public static int partitionner(int t[], int first, int last){
-        int pivot = t[last];
-        int i = first-1;
+    public static int partitionner(int t[], int from, int to){
+        int pivot = t[to];
+        int i = from -1;
 
-        for (int j=first; j<last; j++){
+        for (int j = from; j<to; j++){
             if (t[j] < pivot){
                 i++;
                 ArrayUtil.swap(t,j,i);
             }
         }
 
-        ArrayUtil.swap(t,i+1, last);
+        ArrayUtil.swap(t,i+1, to);
 
         return i+1;
     }
 
     @Override
-    public void sort(int t[], int first, int last){
+    public void sort(int t[], int from, int to){
 
-        if (first < last){
-            int pivot = partitionner(t, first, last);
+        if (from < to){
+            int pivot = partitionner(t, from, to);
 
-            sort(t, first, pivot-1);
-            sort(t, pivot+1, last);
+            sort(t, from, pivot-1);
+            sort(t, pivot+1, to);
         }
+    }
+
+    @Override
+    public void sort(int t[]){
+        sort(t, 0, t.length-1);
     }
 
 
