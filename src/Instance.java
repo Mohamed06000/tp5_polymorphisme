@@ -24,23 +24,21 @@ public class Instance {
 
     public int[][] get()
     {
-        int copyT[][] = new int[number][len];
+        int copyDeT[][] = new int[number][len];
 
         for (int i=0; i<number; i++)
         {
             for (int j=0; j<len; j++)
             {
-                copyT[i][j] = t[i][j];
+                copyDeT[i][j] = t[i][j];
             }
         }
-        return copyT;
-    }
-
-    public void afficheTab(){
-        System.out.println(Arrays.deepToString(this.get()));
+        return copyDeT;
     }
 
 
+
+    /*   pour afficher les tableau un par un on peut utiliser la methode Arrays.deepToString(this.get()) !!! */
 }
 
 

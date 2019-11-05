@@ -1,5 +1,9 @@
 public class OptimizedQuickSort implements Sort{
 
+
+    @Override
+    public void sort(int t[]){ sort(t, 0, t.length-1); }
+
     /*COMME NOS ALOG DE TRI IMPLEMENTE L'INTERFACE SORT ON PEUT ALORS UTILISER LE POLYMORPHISME POUR CREE NOS OBJETS.
      ON CREE UN TABLEAU DE TYPE SORT QUI CONTIENT 2 ALGO TRI RAPIDE ET TRI SELECTION ! */
 

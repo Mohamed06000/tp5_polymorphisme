@@ -21,6 +21,10 @@ public class QuickSort implements Sort {
     }
 
     @Override
+    public void sort(int t[]){ sort(t, 0, t.length-1); }
+
+
+    @Override
     public void sort(int t[], int from, int to)
     {
         if (from < to)
