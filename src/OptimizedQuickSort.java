@@ -17,7 +17,7 @@ public class OptimizedQuickSort implements Sort{
     public void sort(int t[], int from, int to) {
 
         if (t.length < 16){
-            new SelectionSort().sort(t, from, to);
+            new SelectionSort().sort(t, from, to); // Utilisation d'un objet anonyme
         }
         else{
             new QuickSort().sort(t,from,to);

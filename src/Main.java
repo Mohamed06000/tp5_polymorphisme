@@ -6,7 +6,7 @@ public class Main {
 
         int t[] = {3,0,2,17,9,14,5}; // Creation d'un tableau nom trie
 
-        Sort algoTri[] = { new SelectionSort(), new BubbleSort(), new QuickSort(), new OptimizedQuickSort()}; // Creation d'un tableau d'objets anonymes Sort
+        Sort algoTri[] = { new SelectionSort(), new BubbleSort(), new QuickSort(), new OptimizedQuickSort()}; // Creation d'un tableau d'objets Sort
 
         System.out.println("Le tableau a trier : " + Arrays.toString(t));
 
