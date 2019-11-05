@@ -6,7 +6,9 @@ public interface Sort {
 
     // SURCHARGEMENT DE LA METHODE SORT :
 
-    void sort(int [] t, int from, int to);
+    default void sort(int[] t, int from, int to) {
+
+    }
 
 }
 
