@@ -12,7 +12,7 @@ public class Main {
 
         // Parcourir le tableau d'algo pour effectuer le tri puis l'afficher
         for (Sort algo : algoTri) {
-            algo.sort(t);
+            algo.sort(t); // On pourrait utiliser la methode a 3 argument si l'on chercher a trier une partie du tableau
             System.out.println(algo.getClass().getSimpleName() + " : " + Arrays.toString(t));
         }
 
